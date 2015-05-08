@@ -1,0 +1,43 @@
+1. Name what each of the below is:
+
+a = 1             # local variable
+@a = 2            # instance variable
+user = User.new   # instantiation of an object of class User
+user.name         # Getting the name state from the object user
+user.name = "Joe" # Setting the name state from the object user to "Joe"
+
+2. How does a class mixin a module?
+Using include <name of module>. This is so that the class can access 
+behaviors in that module. 
+
+3. What's the difference between class variables and instance variables?
+Class variables are accessible in any instance of the class. 
+Instance variables are only accessible within a single instance of the class. 
+
+4. What does attr_accessor do?
+attr_accessor sets up a getter and setter for a given class. 
+
+5. How would you describe this expression: Dog.some_method
+That's a class method for Dog. 
+
+6. In Ruby, what's the difference between subclassing and mixing in modules?
+Subclassing means that one class inherits from another class (states and behaviors). 
+It usually suggests an "is a" relationship. i.e., a grasshopper "is a" bug. 
+Modules on the other hand contain behaviors that can be applied to multiple classes. 
+Mixing in modules is called composition and is usually applied when classes have 
+multiple inheritances, or when certain behaviors are shared among classes, but not 
+every single one of them. i.e., a dog can swim and a human can swim. 
+
+7. Given that I can instantiate a user like this: User.new('Bob'), what would the initialize method look like for the User class? 
+It would look something like this…
+def initialize(name)
+  self.name = name
+end
+
+8. Can you call instance methods of the same class from other instance methods in 
+that class? 
+Yes. 
+
+9. When you get stuck, what's the process you use to try to trap the error? 
+Add a require 'pry' to the top of the Ruby file and add a binding.pry line right 
+before the line where the error happens. Then you can debug via IRB in the Terminal.
